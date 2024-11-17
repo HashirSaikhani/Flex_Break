@@ -64,3 +64,5 @@ function sendToGoogleSheets(data) {
 // Run the function
 logRealTimeInput();
 handleSubmitButtonClick()
+
+
