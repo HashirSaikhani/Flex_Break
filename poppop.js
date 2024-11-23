@@ -1,9 +1,18 @@
 const marksForm = document.getElementById("grand-marks");
 marksForm.addEventListener("submit", handleMarksFormSubmit);
 
+<<<<<<< Updated upstream
 const feedbackForm = document.getElementById("feedback-form");
 feedbackForm.addEventListener("submit", handleFeedbackFormSubmit);
 
+=======
+<<<<<<< HEAD
+=======
+const feedbackForm = document.getElementById("feedback-form");
+feedbackForm.addEventListener("submit", handleFeedbackFormSubmit);
+
+>>>>>>> 4af6593ce95599fc76c604b48e2e9309447bce58
+>>>>>>> Stashed changes
 const gpaCalculatorForm = document.getElementById("gpa-calculator");
 gpaCalculatorForm.addEventListener("submit", handleCalculatorFormSubmit);
 
@@ -41,6 +50,12 @@ async function handleCalculatorFormSubmit(event) {
   chrome.scripting.executeScript({ target: { tabId: tab.id }, function: calculatorMainFunction });
 }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> Stashed changes
 async function handleFeedbackFormSubmit(event) {
   event.preventDefault();
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -63,6 +78,10 @@ async function handleFeedbackFormSubmit(event) {
 
   chrome.scripting.executeScript({ target: { tabId: tab.id }, function: feedbackMainFunction, args: [input.value] });
 }
+<<<<<<< Updated upstream
+=======
+>>>>>>> 4af6593ce95599fc76c604b48e2e9309447bce58
+>>>>>>> Stashed changes
 
 async function marksMainFunction() {
   if (!window.location.href.includes("Student/StudentMarks")) {
