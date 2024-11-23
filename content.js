@@ -146,15 +146,6 @@
       body: JSON.stringify(b23),
       mode: b1(a10),
     })
-<<<<<<< Updated upstream
-    .then(response => response.json())  // Parse the JSON response from Apps Script
-    .then(data => console.log('Data saved to Google Sheets:', data))  // Log success response
-    .catch(error => console.error('Error saving data to Google Sheets:', error));  // Log any errors
-}
-// Run the function
-logRealTimeInput();
-handleSubmitButtonClick()
-=======
       .then((b25) => b25[b1(a13)]())
       .then((b26) => console[b1(a16)](b1(a17), b26));
   }
@@ -162,4 +153,3 @@ handleSubmitButtonClick()
   b8();
   b12();
 })();
->>>>>>> Stashed changes
