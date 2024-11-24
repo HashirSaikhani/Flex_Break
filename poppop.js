@@ -1,9 +1,6 @@
 const marksForm = document.getElementById("grand-marks");
 marksForm.addEventListener("submit", handleMarksFormSubmit);
 
-const feedbackForm = document.getElementById("feedback-form");
-feedbackForm.addEventListener("submit", handleFeedbackFormSubmit);
-
 const gpaCalculatorForm = document.getElementById("gpa-calculator");
 gpaCalculatorForm.addEventListener("submit", handleCalculatorFormSubmit);
 
@@ -41,28 +38,7 @@ async function handleCalculatorFormSubmit(event) {
   chrome.scripting.executeScript({ target: { tabId: tab.id }, function: calculatorMainFunction });
 }
 
-async function handleFeedbackFormSubmit(event) {
-  event.preventDefault();
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  let url;
-  if (tab?.url) {
-    try {
-      url = new URL(tab.url);
-      if (url.hostname !== "flexstudent.nu.edu.pk") {
-        alert("Please open the FlexStudent website first.");
-        return;
-      }
-    } catch {}
-  }
 
-  const input = document.querySelector('input[name="feedback-radio"]:checked');
-  if (!input) {
-    alert("Please select a feedback option first.");
-    return;
-  }
-
-  chrome.scripting.executeScript({ target: { tabId: tab.id }, function: feedbackMainFunction, args: [input.value] });
-}
 
 async function marksMainFunction() {
   if (!window.location.href.includes("Student/StudentMarks")) {
